@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2f68">
+  <meta name="description" content="SAPA FIND - Asisten Informasi Layanan Keimigrasian Selatpanjang">
+  <title>SAPA FIND — Asisten Informasi Imigrasi Selatpanjang</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- LANDING -->
+    <section id="landing" class="screen landing-screen">
+      <header class="topbar landing-topbar">
+        <div class="brand">
+          <div class="brand-mark">✦</div>
+          <div>
+            <div class="brand-name">SAPA <span>FIND</span></div>
+            <div class="brand-sub">Asisten Informasi Keimigrasian<br>Selatpanjang</div>
+          </div>
+        </div>
+        <button class="help-btn" data-action="help">? <span>Bantuan</span></button>
+      </header>
+
+      <main class="landing-main">
+        <div class="landing-art" aria-hidden="true">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <div class="mascot">
+            <div class="cap">✦</div>
+            <div class="head">
+              <span class="eye left"></span><span class="eye right"></span>
+              <span class="smile"></span>
+            </div>
+            <div class="body">
+              <span class="badge">SAPA<br>FIND</span>
+              <span class="tie"></span>
+            </div>
+            <div class="hand">👋</div>
+          </div>
+        </div>
+
+        <div class="landing-copy">
+          <div class="eyebrow">ASISTEN INFORMASI LAYANAN KEIMIGRASIAN</div>
+          <h1>SAPA <span>FIND</span><i>⌕</i></h1>
+          <h2>Asisten Informasi Layanan Keimigrasian<br><b>Imigrasi Selatpanjang</b></h2>
+          <p>Halo! Saya SAPA FIND, asisten virtual yang membantu Anda menemukan informasi layanan keimigrasian dengan cepat, mudah, dan terarah.</p>
+          <button id="startBtn" class="primary-btn"><span>💬</span> KETUK MULAINYA</button>
+          <div class="landing-note">atau pilih kategori informasi di bawah</div>
+        </div>
+      </main>
+
+      <section class="popular-wrap">
+        <h3>⭐ Informasi Populer</h3>
+        <div id="landingCategories" class="category-grid compact"></div>
+      </section>
+
+      <section class="howto">
+        <h3>Cara Menggunakan SAPA FIND</h3>
+        <div class="steps">
+          <div><b>1</b><span>💬</span><strong>Tanyakan</strong><p>Ketik pertanyaan Anda tentang layanan keimigrasian.</p></div>
+          <div><b>2</b><span>🔎</span><strong>Dapatkan Jawaban</strong><p>SAPA FIND menampilkan informasi yang sesuai.</p></div>
+          <div><b>3</b><span>✓</span><strong>Ikuti Panduan</strong><p>Ikuti langkah dan persyaratan yang diberikan.</p></div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>✦ © 2026 SAPA FIND • Prototype Informasi Keimigrasian</span>
+        <span>SAPA FIND v1.0</span>
+      </footer>
+    </section>
+
+    <!-- APP -->
+    <section id="mainApp" class="screen app-screen hidden">
+      <header class="topbar app-topbar">
+        <div class="brand">
+          <button id="backHome" class="icon-btn" aria-label="Kembali">←</button>
+          <div class="brand-mark small">✦</div>
+          <div>
+            <div class="brand-name">SAPA <span>FIND</span></div>
+            <div class="brand-sub">Asisten Informasi Keimigrasian</div>
+          </div>
+        </div>
+        <div class="online"><span></span> Online</div>
+      </header>
+
+      <div class="app-layout">
+        <aside class="sidebar">
+          <div class="side-title">Menu Cepat</div>
+          <div id="sideMenu"></div>
+          <div class="service-card">
+            <strong>Jam Layanan</strong>
+            <b>Senin – Jumat</b>
+            <span>08.00 – 15.30 WIB</span>
+          </div>
+          <small>Informasi dapat berubah mengikuti ketentuan layanan terbaru.</small>
+        </aside>
+
+        <main class="chat-panel">
+          <div class="chat-head">
+            <div>
+              <strong>Halo! Saya SAPA FIND.</strong>
+              <span>Asisten Virtual Imigrasi Selatpanjang</span>
+            </div>
+            <button class="icon-btn" data-action="help">?</button>
+          </div>
+
+          <div id="chatMessages" class="messages"></div>
+
+          <div id="quickButtons" class="quick-buttons"></div>
+
+          <div class="search-row">
+            <input id="searchInput" type="text" placeholder="Ketik pertanyaan Anda di sini..." autocomplete="off">
+            <button id="sendBtn" class="send-btn">➤</button>
+          </div>
+          <div class="search-hint">Contoh: “syarat paspor baru”, “paspor hilang”, “biaya paspor”</div>
+        </main>
+      </div>
+    </section>
+
+    <!-- DETAIL MODAL -->
+    <div id="detailModal" class="modal hidden">
+      <div class="modal-card">
+        <button id="closeModal" class="modal-close">×</button>
+        <div id="modalIcon" class="modal-icon">◉</div>
+        <div id="modalCategory" class="tag">Paspor</div>
+        <h2 id="modalTitle">Detail layanan</h2>
+        <div id="modalBody"></div>
+        <div id="modalActions" class="modal-actions"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
